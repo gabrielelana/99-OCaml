@@ -1,10 +1,8 @@
 (* Count the number of elements in a list *)
 
-let length l =
-  let rec _length n = function
-    | [] -> n
-    | head::tail -> _length (n+1) tail
-  in _length 0 l
+let rec length = function
+  | [] -> 0
+  | head::tail -> 1 + length tail
 ;;
 
 assert(length [] = 0);;
